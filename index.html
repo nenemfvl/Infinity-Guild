@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity - Guild</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle">N</div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#home" class="active">Home</a>
+                <a href="#members">Members</a>
+                <a href="#events">Events</a>
+                <a href="#nfts">NFTs</a>
+                <a href="trade.html">Trade</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn-login">Login</button>
+                <button class="btn-register">Registrar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Login</h2>
+                <p>Entre na sua conta Infinity</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Lembrar-me
+                    </label>
+                    <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                </div>
+                <button type="submit" class="btn-submit">Entrar</button>
+                <div class="form-footer">
+                    <p>Não tem conta? <a href="#" class="switch-link" id="switchToRegister">Criar conta</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Registrar -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Registrar</h2>
+                <p>Crie sua conta Infinity</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="registerName">Nome de Usuário</label>
+                    <input type="text" id="registerName" placeholder="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Senha</label>
+                    <input type="password" id="registerPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Senha</label>
+                    <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required> Eu aceito os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Criar Conta</button>
+                <div class="form-footer">
+                    <p>Já tem conta? <a href="#" class="switch-link" id="switchToLogin">Fazer login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="infinity-symbol">∞</div>
+            <h1 class="hero-title">INFINITY</h1>
+            <h2 class="hero-subtitle">Nós somos Infinity</h2>
+            <p class="hero-description">Uma guild global unida por uma só missão: dominar todos os mundos digitais</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Game Cards Section -->
+        <section class="game-cards-section">
+            <div class="game-card">
+                <div class="game-image raven2">
+                    <div class="game-overlay"></div>
+                </div>
+                <h3 class="game-title">Raven 2</h3>
+            </div>
+            <div class="game-card">
+                <div class="game-image legend-of-ymir">
+                    <div class="game-overlay"></div>
+                </div>
+                <h3 class="game-title">Legend of Ymir</h3>
+            </div>
+            <div class="game-card">
+                <div class="game-image albion">
+                    <div class="game-overlay"></div>
+                </div>
+                <h3 class="game-title">Albion Online</h3>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="action-buttons">
+            <button class="action-btn">Entrar na Guild</button>
+            <button class="action-btn">Explorar Divisões</button>
+            <button class="action-btn">Conectar com Discord</button>
+        </section>
+
+        <!-- Two Column Layout -->
+        <div class="two-column-layout">
+            <!-- Left Column - Statistics -->
+            <section class="statistics-section">
+                <h2 class="section-title">Estatísticas</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">1.248</div>
+                        <div class="stat-label">Membros ativos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">315</div>
+                        <div class="stat-label">Eventos concluidos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">189</div>
+                        <div class="stat-label">NFTs conquistados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Ranking atual</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column - Divisions Sidebar -->
+            <aside class="divisions-sidebar">
+                <h2 class="section-title">Divisões</h2>
+                <div class="division-item">
+                    <div class="division-icon raven2-icon"></div>
+                    <div class="division-info">
+                        <div class="division-name">Raven 2</div>
+                        <div class="division-members">272 ativos</div>
+                    </div>
+                    <div class="division-score">372</div>
+                </div>
+                <div class="division-item">
+                    <div class="division-icon legend-icon"></div>
+                    <div class="division-info">
+                        <div class="division-name">Legend of Ymir</div>
+                        <div class="division-members">251 ativos</div>
+                    </div>
+                    <div class="division-score">261</div>
+                </div>
+                <div class="division-item">
+                    <div class="division-icon albion-icon"></div>
+                    <div class="division-info">
+                        <div class="division-name">Albion Online</div>
+                        <div class="division-members">176 ativos</div>
+                    </div>
+                    <div class="division-score">178</div>
+                </div>
+                <div class="division-item">
+                    <div class="division-icon gw2-icon"></div>
+                    <div class="division-info">
+                        <div class="division-name">Guild Wars 2</div>
+                        <div class="division-members">6 ativos</div>
+                    </div>
+                    <div class="division-score">0</div>
+                </div>
+                <div class="division-item">
+                    <div class="division-icon mir4-icon"></div>
+                    <div class="division-info">
+                        <div class="division-name">Mir4</div>
+                        <div class="division-members">87 ativos</div>
+                    </div>
+                    <div class="division-score">97</div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

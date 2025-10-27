@@ -1,0 +1,22 @@
+{
+  "name": "infinity-guild",
+  "version": "1.0.0",
+  "description": "Infinity Guild - Gaming Guild Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000",
+    "start": "npx http-server -p 3000",
+    "build": "echo 'Build complete - static site'"
+  },
+  "keywords": [
+    "gaming",
+    "guild",
+    "infinity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
+

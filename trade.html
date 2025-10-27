@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade - Infinity Guild</title>
+    <link rel="stylesheet" href="trade.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="infinity-logo">∞</div>
+                <h1 class="logo-text">INFINITY</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="profile.html">GUILD</a>
+                <a href="trade.html" class="active">TRADE</a>
+                <a href="#">SUPPORT</a>
+            </nav>
+            <button class="btn-connect">CONNECT</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <!-- Left Column - Trade Listings -->
+            <div class="trade-section">
+                <h2 class="section-title">TRADE LISTINGS</h2>
+                
+                <div class="filter-container">
+                    <select class="filter-select">
+                        <option value="">Select a game</option>
+                        <option value="raven2">Raven 2</option>
+                        <option value="legend">Legend of Ymir</option>
+                        <option value="albion">Albion Online</option>
+                        <option value="guildwars2">Guild Wars 2</option>
+                        <option value="mir4">Mir4</option>
+                    </select>
+                </div>
+
+                <!-- Trade Table -->
+                <div class="trade-table">
+                    <div class="table-header">
+                        <div class="table-cell">Game</div>
+                        <div class="table-cell">Token</div>
+                        <div class="table-cell">Amount</div>
+                        <div class="table-cell">Total</div>
+                        <div class="table-cell">Action</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell">
+                            <div class="game-info">
+                                <div class="game-icon raven2-icon"></div>
+                                <span class="game-name">Raven 2</span>
+                            </div>
+                        </div>
+                        <div class="table-cell">Raven</div>
+                        <div class="table-cell">2.500</div>
+                        <div class="table-cell">1.000</div>
+                        <div class="table-cell">
+                            <button class="btn-buy">BUY</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell">
+                            <div class="game-info">
+                                <div class="game-icon legend-icon"></div>
+                                <span class="game-name">Legend of Ymir</span>
+                            </div>
+                        </div>
+                        <div class="table-cell">--</div>
+                        <div class="table-cell">500</div>
+                        <div class="table-cell">1.500</div>
+                        <div class="table-cell">
+                            <button class="btn-buy">BUY</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell">
+                            <div class="game-info">
+                                <div class="game-icon albion-icon"></div>
+                                <span class="game-name">Albion Online</span>
+                            </div>
+                        </div>
+                        <div class="table-cell">Albion</div>
+                        <div class="table-cell">1000</div>
+                        <div class="table-cell">1.500</div>
+                        <div class="table-cell">
+                            <button class="btn-buy">BUY</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell">
+                            <div class="game-info">
+                                <div class="game-icon gw2-icon"></div>
+                                <span class="game-name">Guild Wars 2</span>
+                            </div>
+                        </div>
+                        <div class="table-cell">Gultu</div>
+                        <div class="table-cell">2.000</div>
+                        <div class="table-cell">2.330</div>
+                        <div class="table-cell">
+                            <button class="btn-buy">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Create Trade & Admin Panel -->
+            <div class="side-section">
+                <!-- Create Trade -->
+                <div class="create-trade">
+                    <h2 class="section-title">CREATE TRADE</h2>
+                    <form class="trade-form">
+                        <div class="form-group">
+                            <label>Game</label>
+                            <select class="form-input">
+                                <option value="">Select Game</option>
+                                <option value="raven2">Raven 2</option>
+                                <option value="legend">Legend of Ymir</option>
+                                <option value="albion">Albion Online</option>
+                                <option value="guildwars2">Guild Wars 2</option>
+                                <option value="mir4">Mir4</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Token</label>
+                            <select class="form-input">
+                                <option value="">Select Token</option>
+                                <option value="raven">Raven</option>
+                                <option value="albion">Albion</option>
+                                <option value="gultu">Gultu</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Amount</label>
+                            <input type="number" class="form-input" placeholder="Enter amount">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Notes</label>
+                            <textarea class="form-input" rows="4" placeholder="Add notes..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-create">CREATE</button>
+                    </form>
+                </div>
+
+                <!-- Admin Panel -->
+                <div class="admin-panel">
+                    <h2 class="section-title">ADMIN PANEL</h2>
+                    <div class="stats-list">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Volume</span>
+                            <span class="stat-value">150</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Transactions</span>
+                            <span class="stat-value">42</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Earned</span>
+                            <span class="stat-value">750</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Pending Transactions</span>
+                            <span class="stat-value">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="trade.js"></script>
+</body>
+</html>
+
