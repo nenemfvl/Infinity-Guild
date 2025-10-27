@@ -163,22 +163,35 @@ document.getElementById('switchToLogin').addEventListener('click', (e) => {
 });
 
 // Submit dos formulários
-document.querySelector('#loginModal form').addEventListener('submit', (e) => {
+document.querySelector('#loginModal form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
-    console.log('Login:', { email, password });
     
-    // Simula login e redireciona para o perfil
-    alert('Login realizado com sucesso!');
-    setTimeout(() => {
-        window.location.href = 'profile.html';
-    }, 500);
-    
-    // Aqui você pode adicionar a lógica de autenticação real
+    try {
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            loginModal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            alert('Login realizado com sucesso!');
+            window.location.href = 'profile.html';
+        } else {
+            alert(data.error || 'Erro ao fazer login');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro de conexão. Verifique se o servidor está rodando.');
+    }
 });
 
-document.querySelector('#registerModal form').addEventListener('submit', (e) => {
+document.querySelector('#registerModal form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('registerName').value;
     const email = document.getElementById('registerEmail').value;
@@ -190,9 +203,27 @@ document.querySelector('#registerModal form').addEventListener('submit', (e) => 
         return;
     }
     
-    console.log('Registro:', { name, email, password });
-    alert('Registro em desenvolvimento!');
-    // Aqui você pode adicionar a lógica de registro
+    try {
+        const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: name, email, password })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            registerModal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            alert('Registro realizado com sucesso!');
+            window.location.href = 'profile.html';
+        } else {
+            alert(data.error || 'Erro ao registrar');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro de conexão. Verifique se o servidor está rodando.');
+    }
 });
 
 // Adiciona classe ripple para animação

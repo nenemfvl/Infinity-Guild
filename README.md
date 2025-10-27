@@ -1,200 +1,118 @@
 # 🎮 Infinity Guild
 
-Website oficial da Guild Infinity - Uma comunidade global de gamers unida por uma missão: dominar todos os mundos digitais.
+Website oficial da Guild Infinity com sistema de autenticação completo.
 
-## 🚀 Demonstração
+## ✨ Funcionalidades
 
-- **Homepage**: Landing page com informações da guild
-- **Profile**: Dashboard de perfil do membro
-- **Trade**: Sistema de trocas e NFTs
+- ✅ Sistema de Login/Logout
+- ✅ Registro de usuários
+- ✅ Banco de dados SQLite
+- ✅ Sessões seguras
+- ✅ Dashboard de perfil
+- ✅ Sistema de trade
+- ✅ Totalmente responsivo
 
 ## 📁 Estrutura do Projeto
 
 ```
 CampBlox/
-├── index.html          # Homepage
-├── profile.html        # Página de perfil
-├── trade.html          # Página de trocas
-├── styles.css          # Estilos da homepage
-├── profile.css         # Estilos do perfil
-├── trade.css           # Estilos de trade
-├── script.js           # JavaScript da homepage
-├── profile.js          # JavaScript do perfil
-├── trade.js            # JavaScript de trade
-├── vercel.json         # Configuração Vercel
-├── railway.toml        # Configuração Railway
-└── package.json        # Dependências
+├── server.js          # Servidor backend
+├── package.json        # Dependências
+├── public/            # Arquivos frontend
+│   ├── index.html     # Homepage
+│   ├── profile.html   # Dashboard
+│   ├── trade.html     # Sistema de trade
+│   ├── *.css          # Estilos
+│   └── *.js           # JavaScript
+└── guild.db          # Banco de dados (gerado automaticamente)
 ```
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Como Iniciar
 
-- HTML5
-- CSS3 (Grid, Flexbox, Animations)
-- JavaScript (ES6+)
-- Designs responsivos
-
-## 📦 Instalação Local
+### 1. Instalar Dependências
 
 ```bash
-# Instalar dependências
 npm install
-
-# Iniciar servidor local
-npm run dev
-# ou
-npm start
-
-# Acesse http://localhost:3000
 ```
+
+### 2. Iniciar Servidor
+
+```bash
+npm start
+```
+
+### 3. Acessar o Site
+
+Abra seu navegador em: **http://localhost:3000**
+
+## 📦 Dependências
+
+- **Express** - Servidor web
+- **SQLite3** - Banco de dados
+- **bcryptjs** - Hash de senhas
+- **express-session** - Gerenciamento de sessões
+
+## 🎯 Endpoints da API
+
+### Autenticação
+
+- `POST /api/register` - Registro de usuários
+- `POST /api/login` - Login
+- `POST /api/logout` - Logout
+- `GET /api/check-session` - Verificar sessão
+- `GET /api/user` - Obter dados do usuário (protegido)
+
+## 🗄️ Tabelas do Banco de Dados
+
+- **users** - Usuários
+- **user_sessions** - Sessões ativas
+- **trades** - Listagens de trade
+- **events** - Eventos da guild
+- **games** - Jogos cadastrados
 
 ## 🌐 Deploy
 
-### Vercel (Recomendado)
-
-1. **Instale a CLI do Vercel** (opcional)
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy via CLI**
-   ```bash
-   vercel
-   ```
-
-3. **Deploy via GitHub**
-   - Faça push do código para o GitHub
-   - Acesse [vercel.com](https://vercel.com)
-   - Importe o repositório
-   - Vercel detectará automaticamente a configuração
-
-4. **Configuração Manual**
-   - Framework Preset: Other
-   - Build Command: (deixe em branco)
-   - Output Directory: `.`
-   - Install Command: (opcional)
-
 ### Railway
 
-1. **Instale a CLI do Railway**
-   ```bash
-   npm i -g @railway/cli
-   ```
+O projeto está configurado para o Railway:
 
-2. **Login**
-   ```bash
-   railway login
-   ```
-
-3. **Deploy**
-   ```bash
-   railway init
-   railway up
-   ```
-
-4. **Deploy via GitHub**
-   - Faça push do código para o GitHub
-   - Acesse [railway.app](https://railway.app)
-   - New Project → Deploy from GitHub
-   - Selecione o repositório
-   - Railway usará automaticamente a configuração do `railway.toml`
-
-### Netlify (Alternativa)
-
-1. **Deploy via CLI**
-   ```bash
-   npm i -g netlify-cli
-   netlify deploy
-   ```
-
-2. **Deploy via GitHub**
-   - Acesse [netlify.com](https://netlify.com)
-   - New site from Git
-   - Conecte o GitHub
-   - Build command: (deixe em branco)
-   - Publish directory: `.`
-
-## 🎨 Páginas Disponíveis
-
-### Homepage (`index.html`)
-- Hero section com símbolo de infinito
-- Cards de jogos
-- Estatísticas da guild
-- Divisões e membros
-
-### Profile (`profile.html`)
-- Dashboard do membro
-- Próximos eventos
-- Tabela de jogos do membro
-- Sidebar de navegação
-
-### Trade (`trade.html`)
-- Listagens de trocas
-- Sistema de compra
-- Formulário de criação
-- Painel administrativo
-
-## 🎯 Funcionalidades
-
-- ✅ Design moderno e dark theme
-- ✅ Totalmente responsivo
-- ✅ Animações suaves
-- ✅ Modal de login/registro
-- ✅ Navegação integrada
-- ✅ Sistema de filtros
-- ✅ Tabelas interativas
-
-## 📱 Responsividade
-
-O site é otimizado para:
-- 📱 Mobile (320px+)
-- 📱 Tablet (768px+)
-- 💻 Desktop (1200px+)
-- 🖥️ Large Desktop (1400px+)
-
-## 🔧 Personalização
-
-### Cores
-
-Edite as variáveis CSS em cada arquivo `.css`:
-
-```css
-:root {
-    --accent-purple: #8b5cf6;
-    --accent-blue: #00d4ff;
-    /* ... */
-}
+```bash
+npm install
+npm start
 ```
 
-### Conteúdo
+Railway detectará automaticamente o `railway.toml` e fará o deploy.
 
-Edite os arquivos HTML para personalizar textos, imagens e links.
+### Vercel (Alternativa)
 
-## 📊 Divisões da Guild
+Para Vercel, você precisará de um servidor separado ou usar Railway para o backend.
 
-- **Raven 2** - 272 membros ativos
-- **Legend of Ymir** - 251 membros ativos
-- **Albion Online** - 176 membros ativos
-- **Guild Wars 2** - 6 membros ativos
-- **Mir4** - 87 membros ativos
+## 🎨 Páginas
 
-## 🚧 Próximas Funcionalidades
+- **Homepage** (`/`) - Landing page com login
+- **Profile** (`/profile.html`) - Dashboard do membro
+- **Trade** (`/trade.html`) - Sistema de trocas
 
-- [ ] Sistema de autenticação completo
+## 🔐 Segurança
+
+- Senhas são hasheadas com bcrypt
+- Sessões seguras com httpOnly cookies
+- Validação de dados no servidor
+- Proteção CSRF
+
+## 📝 Próximos Passos
+
 - [ ] Integração com blockchain
 - [ ] Sistema de NFTs
-- [ ] API para eventos
 - [ ] Chat em tempo real
-- [ ] Sistema de notificações
-- [ ] Dashboard de estatísticas
+- [ ] API de eventos
+- [ ] Dashboard de admin
+- [ ] Sistema de notificações push
 
-## 📝 Licença
+## 📄 Licença
 
-MIT License - Livre para uso e modificação
-
-## 👥 Desenvolvedor
-
-Desenvolvido com ❤️ para a Infinity Guild
+MIT License
 
 ---
 
-**Link de Deploy**: Será gerado após o deploy no Vercel/Railway
+**Desenvolvido com ❤️ para a Infinity Guild**

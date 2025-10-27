@@ -31,3 +31,9 @@ temp/
 .env.test.local
 .env.production.local
 
+# Banco de dados
+*.db
+*.db-journal
+guild.db
+guild.db-journal
+

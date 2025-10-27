@@ -98,3 +98,48 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Verificar sessão
+async function checkSession() {
+    try {
+        const response = await fetch('/api/check-session');
+        const data = await response.json();
+        
+        if (data.authenticated) {
+            console.log('Usuário autenticado:', data.user);
+            // Você pode personalizar a UI aqui
+        } else {
+            // Redireciona para login se não estiver autenticado
+            window.location.href = 'index.html';
+        }
+    } catch (error) {
+        console.error('Erro ao verificar sessão:', error);
+    }
+}
+
+// Logout
+document.querySelector('.nav-item.logout')?.addEventListener('click', async (e) => {
+    e.preventDefault();
+    
+    if (confirm('Deseja realmente sair?')) {
+        try {
+            const response = await fetch('/api/logout', {
+                method: 'POST'
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                alert('Logout realizado com sucesso!');
+                window.location.href = 'index.html';
+            }
+        } catch (error) {
+            console.error('Erro ao fazer logout:', error);
+            // Mesmo assim redireciona
+            window.location.href = 'index.html';
+        }
+    }
+});
+
+// Verificar sessão ao carregar a página
+checkSession();
+

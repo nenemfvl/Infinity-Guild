@@ -1,6 +1,6 @@
 [build]
-build = "echo 'Static site - no build needed'"
+build = "npm install"
 
 [deploy]
-startCommand = "npx http-server -p $PORT -d false"
+startCommand = "node server.js"
 
